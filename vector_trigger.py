@@ -18,6 +18,6 @@ def callback(indata, frames, time, status):
         result = recognizer.Result()
         if "vector" in result.lower():
             print("Vector tetiklendi!")
-                    os.system("python3 pretrained_bot.py")
+            os.system("python3 pretrained_bot.py")
 
 listen_trigger()
