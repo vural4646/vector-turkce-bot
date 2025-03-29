@@ -14,10 +14,10 @@ def listen_trigger():
             sd.sleep(1000)
 
 def callback(indata, frames, time, status):
-    if recognizer.AcceptWaveform(indata):
-        result = json.loads(recognizer.Result())
-        if 'vector' in result['text']:
-            print("Tetikleyici kelime duyuldu.")
-            os.system("python3 pretrained_bot.py")
+    if recognizer.AcceptWaveform(indata.tobytes()):
+        result = recognizer.Result()
+        if "vector" in result.lower():
+            print("Vector tetiklendi!")
+                    os.system("python3 pretrained_bot.py")
 
 listen_trigger()
