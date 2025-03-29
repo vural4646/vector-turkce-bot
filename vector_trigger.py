@@ -20,4 +20,5 @@ def callback(indata, frames, time, status):
             print("Vector tetiklendi!")
             os.system("python3 pretrained_bot.py")
 
+
 listen_trigger()
